@@ -17,6 +17,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- ==================== ADSENSE SCRIPT ==================== -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1055305777201566"
+     crossorigin="anonymous"></script>
+  <!-- ==================================================== -->
+
   <style>
     *{
       margin:0;
@@ -204,7 +209,7 @@
       transform:scale(1.04);
     }
 
-    /* === USUARIOS EN LÍNEA === */
+    /* USUARIOS EN LÍNEA */
     .online-users {
       background: #1a1f2e;
       border-top: 1px solid #ff0055;
@@ -258,6 +263,7 @@
       100% { box-shadow: 0 0 0 0 rgba(0, 255, 133, 0); }
     }
 
+    /* ADSENSE */
     .ads-box{
       margin:60px auto;
       max-width:1000px;
@@ -323,44 +329,20 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-
-      <div class="badge">
-        🔥 Tendencias virales del momento
-      </div>
-
-      <h1>
-        Aquí encuentras los videos más calientes y comentados en las redes 🔥
-      </h1>
-
-      <p>
-        Explora contenido viral, entretenimiento y tendencias que están dando de qué hablar. Todo en una experiencia moderna, rápida e interactiva.
-      </p>
-
+      <div class="badge">🔥 Tendencias virales del momento</div>
+      <h1>Aquí encuentras los videos más calientes y comentados en las redes 🔥</h1>
+      <p>Explora contenido viral, entretenimiento y tendencias que están dando de qué hablar. Todo en una experiencia moderna, rápida e interactiva.</p>
+      
       <div class="cta-group">
-        <a href="#videos" class="btn btn-primary">
-          ▶ Ver tendencias
-        </a>
-
-        <a href="#popular" class="btn btn-secondary">
-          ⭐ Más populares
-        </a>
+        <a href="#videos" class="btn btn-primary">▶ Ver tendencias</a>
+        <a href="#popular" class="btn btn-secondary">⭐ Más populares</a>
       </div>
 
       <div class="stats">
-        <div class="stat-card">
-          <h2>+2M</h2>
-          <p>Visualizaciones</p>
-        </div>
-        <div class="stat-card">
-          <h2>+120K</h2>
-          <p>Usuarios activos</p>
-        </div>
-        <div class="stat-card">
-          <h2>24/7</h2>
-          <p>Contenido actualizado</p>
-        </div>
+        <div class="stat-card"><h2>+2M</h2><p>Visualizaciones</p></div>
+        <div class="stat-card"><h2>+120K</h2><p>Usuarios activos</p></div>
+        <div class="stat-card"><h2>24/7</h2><p>Contenido actualizado</p></div>
       </div>
-
     </div>
   </section>
 
@@ -368,14 +350,27 @@
   <section class="section" id="videos">
     <h2 class="section-title">Videos y noticias en tendencia</h2>
     <p class="section-sub">Contenido destacado y temas virales del día.</p>
-    <!-- ... (mantengo las cards iguales) ... -->
     <div class="cards">
-      <!-- Tus cards originales aquí (sin cambios) -->
+      <!-- Tus cards aquí -->
       <div class="card"> ... </div>
       <div class="card"> ... </div>
       <div class="card"> ... </div>
     </div>
   </section>
+
+  <!-- ANUNCIO ADSENSE -->
+  <div class="ads-box">
+    <p style="color:#bbb; margin-bottom:15px;">Publicidad</p>
+    <ins class="adsbygoogle"
+         style="display:block; width:100%;"
+         data-ad-client="ca-pub-1055305777201566"
+         data-ad-slot="TU_SLOT_AQUI"   <!-- ← Cambia esto por tu slot -->
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
 
   <!-- USUARIOS EN LÍNEA -->
   <div class="online-users">
@@ -391,9 +386,6 @@
     <div class="online-dot"></div>
     <span style="color:#bbb;">conectados</span>
   </div>
-
-  <!-- Resto del contenido (ads, sección popular, floating button, footer) -->
-  <!-- ... (mantengo igual) ... -->
 
   <!-- BOTÓN FLOTANTE -->
   <div class="floating">
@@ -412,7 +404,7 @@
   </footer>
 
   <script>
-    // (Mantengo tu script original)
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
