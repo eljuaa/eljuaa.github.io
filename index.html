@@ -1,0 +1,534 @@
+# HTML interactivo estilo entretenimiento compatible con AdSense
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tendencias virales y entretenimiento</title>
+
+  <!-- SEO / Social -->
+  <meta name="description" content="Noticias virales, tendencias y entretenimiento actualizado." />
+  <meta property="og:title" content="Tendencias virales y entretenimiento" />
+  <meta property="og:description" content="Descubre las historias y videos más comentados del momento." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=80&w=1200&auto=format&fit=crop" />
+  <meta property="og:type" content="website" />
+
+  <!-- Fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f1117;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    .hero{
+      min-height:100vh;
+      background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+      url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1400&auto=format&fit=crop') center/cover;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:30px;
+    }
+
+    .hero-content{
+      max-width:900px;
+      text-align:center;
+      animation:fadeUp 1s ease;
+    }
+
+    .badge{
+      display:inline-block;
+      background:#ff0055;
+      color:#fff;
+      padding:10px 18px;
+      border-radius:50px;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:20px;
+      animation:pulse 2s infinite;
+    }
+
+    h1{
+      font-size:clamp(2.5rem,5vw,5rem);
+      line-height:1.1;
+      margin-bottom:20px;
+      font-weight:800;
+    }
+
+    .hero p{
+      color:#ddd;
+      font-size:1.15rem;
+      line-height:1.8;
+      margin-bottom:35px;
+    }
+
+    .cta-group{
+      display:flex;
+      gap:20px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      position:relative;
+      overflow:hidden;
+      padding:18px 34px;
+      border-radius:60px;
+      font-weight:700;
+      transition:.3s ease;
+      font-size:16px;
+      border:none;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#ff0055,#7b2ff7);
+      color:#fff;
+      box-shadow:0 10px 30px rgba(255,0,85,.4);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:#111;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px) scale(1.03);
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:20px;
+      margin-top:60px;
+    }
+
+    .stat-card{
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:20px;
+      padding:25px;
+    }
+
+    .stat-card h2{
+      font-size:2rem;
+      color:#ff4d94;
+    }
+
+    .section{
+      padding:80px 20px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:2.3rem;
+      margin-bottom:15px;
+      font-weight:800;
+    }
+
+    .section-sub{
+      text-align:center;
+      color:#bbb;
+      margin-bottom:50px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#171b24;
+      border-radius:24px;
+      overflow:hidden;
+      transition:.3s ease;
+      border:1px solid rgba(255,255,255,.05);
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+    }
+
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:22px;
+    }
+
+    .card-content h3{
+      margin-bottom:12px;
+      font-size:1.2rem;
+    }
+
+    .card-content p{
+      color:#bbb;
+      font-size:.95rem;
+      line-height:1.7;
+      margin-bottom:20px;
+    }
+
+    .watch-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:linear-gradient(135deg,#ff0055,#7b2ff7);
+      color:#fff;
+      padding:14px 24px;
+      border-radius:50px;
+      font-weight:700;
+      transition:.3s;
+    }
+
+    .watch-btn:hover{
+      transform:scale(1.04);
+    }
+
+    .ads-box{
+      margin:60px auto;
+      max-width:1000px;
+      background:#1d2230;
+      border:2px dashed rgba(255,255,255,.2);
+      border-radius:20px;
+      padding:40px;
+      text-align:center;
+    }
+
+    .ads-box p{
+      color:#bbb;
+      margin-top:10px;
+    }
+
+    footer{
+      background:#090b10;
+      padding:40px 20px;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    footer p{
+      color:#999;
+      margin:8px 0;
+    }
+
+    .floating{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      z-index:999;
+    }
+
+    .floating a{
+      background:linear-gradient(135deg,#ff0055,#7b2ff7);
+      color:#fff;
+      padding:18px 24px;
+      border-radius:60px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      box-shadow:0 10px 30px rgba(255,0,85,.4);
+      animation:pulse 2s infinite;
+    }
+
+    @keyframes pulse{
+      0%{transform:scale(1)}
+      50%{transform:scale(1.04)}
+      100%{transform:scale(1)}
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:768px){
+      .hero{
+        padding:20px;
+      }
+
+      .cta-group{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+
+      <div class="badge">
+        🔥 Tendencias virales del momento
+      </div>
+
+      <h1>
+        Descubre los videos y noticias más comentadas en redes sociales
+      </h1>
+
+      <p>
+        Explora contenido viral, entretenimiento y tendencias que están dando de qué hablar. Todo en una experiencia moderna, rápida e interactiva.
+      </p>
+
+      <div class="cta-group">
+        <a href="#videos" class="btn btn-primary">
+          ▶ Ver tendencias
+        </a>
+
+        <a href="#popular" class="btn btn-secondary">
+          ⭐ Más populares
+        </a>
+      </div>
+
+      <div class="stats">
+        <div class="stat-card">
+          <h2>+2M</h2>
+          <p>Visualizaciones</p>
+        </div>
+
+        <div class="stat-card">
+          <h2>+120K</h2>
+          <p>Usuarios activos</p>
+        </div>
+
+        <div class="stat-card">
+          <h2>24/7</h2>
+          <p>Contenido actualizado</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN VIDEOS -->
+  <section class="section" id="videos">
+
+    <h2 class="section-title">
+      Videos y noticias en tendencia
+    </h2>
+
+    <p class="section-sub">
+      Contenido destacado y temas virales del día.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop" alt="Tendencia viral">
+
+        <div class="card-content">
+          <h3>La tendencia que explotó en redes</h3>
+
+          <p>
+            Mira el resumen completo de la historia que millones están comentando.
+          </p>
+
+          <a href="https://tu-enlace.com" class="watch-btn" rel="nofollow noopener">
+            ▶ Ver ahora
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200&auto=format&fit=crop" alt="Entretenimiento viral">
+
+        <div class="card-content">
+          <h3>Lo más comentado del entretenimiento</h3>
+
+          <p>
+            Descubre qué celebridades y creadores están siendo tendencia.
+          </p>
+
+          <a href="https://tu-enlace.com" class="watch-btn" rel="nofollow noopener">
+            ▶ Descubrir
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="Noticias virales">
+
+        <div class="card-content">
+          <h3>Historias virales del momento</h3>
+
+          <p>
+            Contenido popular, clips destacados y temas que generan conversación.
+          </p>
+
+          <a href="https://tu-enlace.com" class="watch-btn" rel="nofollow noopener">
+            ▶ Entrar
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ADSENSE -->
+  <div class="ads-box">
+
+    <h2>
+      Espacio publicitario
+    </h2>
+
+    <p>
+      Sustituye este bloque por tu código oficial de Google AdSense.
+    </p>
+
+    <!-- EJEMPLO ADSENSE -->
+    <!--
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
+      crossorigin="anonymous"></script>
+
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-XXXXXXXXXXXX"
+      data-ad-slot="1234567890"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    -->
+
+  </div>
+
+  <!-- MÁS POPULAR -->
+  <section class="section" id="popular">
+
+    <h2 class="section-title">
+      Lo más popular hoy
+    </h2>
+
+    <p class="section-sub">
+      Tendencias destacadas seleccionadas para la audiencia.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&auto=format&fit=crop" alt="Contenido popular">
+
+        <div class="card-content">
+          <h3>Contenido recomendado</h3>
+
+          <p>
+            Historias y clips destacados con mayor interacción.
+          </p>
+
+          <a href="https://tu-enlace.com" class="watch-btn" rel="nofollow noopener">
+            ▶ Ver tendencia
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Tendencias sociales">
+
+        <div class="card-content">
+          <h3>Temas virales destacados</h3>
+
+          <p>
+            Lo que más se comparte y comenta actualmente.
+          </p>
+
+          <a href="https://tu-enlace.com" class="watch-btn" rel="nofollow noopener">
+            ▶ Explorar
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOTÓN FLOTANTE -->
+  <div class="floating">
+    <a href="#videos">
+      🔥 Ver tendencias
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Portal de entretenimiento</p>
+    <p>Contenido informativo y tendencias virales.</p>
+    <p>
+      <a href="#" style="color:#ff4d94;">Privacidad</a>
+      |
+      <a href="#" style="color:#ff4d94;">Términos</a>
+      |
+      <a href="#" style="color:#ff4d94;">Contacto</a>
+    </p>
+  </footer>
+
+  <script>
+
+    // Animación suave al navegar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Efecto interactivo tarjetas
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,0,85,.15), #171b24 40%)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.background = '#171b24';
+      });
+    });
+
+  </script>
+
+</body>
+</html>
